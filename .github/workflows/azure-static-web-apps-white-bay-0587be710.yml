@@ -19,11 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Install Hugo
-        run: |
-            wget https://github.com/gohugoio/hugo/releases/download/v0.128.0/hugo_extended_0.128.0_Linux-64bit.tar.gz
-            tar -xzf hugo_extended_0.128.0_Linux-64bit.tar.gz -C /usr/local/bin
-            hugo version
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -37,6 +32,8 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env:
+          HUGO_VERSION: 0.128.0
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
