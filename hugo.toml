@@ -1,0 +1,4 @@
+baseURL = 'https://gettingstartedwithazureweb20241202155852.azurewebsites.net/'
+languageCode = 'en-us'
+title = 'My Azure Site'
+theme = 'ananke'
